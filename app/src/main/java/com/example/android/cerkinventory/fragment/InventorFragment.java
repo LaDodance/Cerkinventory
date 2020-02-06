@@ -11,6 +11,8 @@ import android.widget.NumberPicker;
 
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.cerkinventory.R;
 
@@ -18,6 +20,7 @@ public class InventorFragment extends Fragment implements View.OnClickListener {
 
 
     private View rootView;
+    private RecyclerView recyclerView;
 
     public InventorFragment() {
         //required empty constructor
@@ -33,10 +36,19 @@ public class InventorFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.inventor_fragment_layout, container, false);
 
+        initView();
 
         return rootView;
     }
 
+    private void initView() {
+        recyclerView = rootView.findViewById(R.id.inventory_recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        /*
+        adapter = new HistoryAdapter(HistoryFragment.this, HistoryDAOImpl.getAllHistorys());
+        recyclerView.setAdapter(adapter); */
+    }
 
     @Override
     public void onClick(View view) {

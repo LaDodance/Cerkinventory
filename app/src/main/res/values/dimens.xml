@@ -4,4 +4,6 @@
     <dimen name="bottomButtonInventor">50dp</dimen>
     <dimen name="bottomButtonHistory">40dp</dimen>
     <dimen name="menuBar">4dp</dimen>
+    <dimen name="marginTitle">20dp</dimen>
+    <dimen name="paddingHorizontal">10dp</dimen>
 </resources>

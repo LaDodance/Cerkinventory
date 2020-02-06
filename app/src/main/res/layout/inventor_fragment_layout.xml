@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="inventory" />
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/marginTitle"
+        android:layout_marginBottom="@dimen/marginTitle"
+        android:background="@drawable/background_stroke"
+        android:paddingHorizontal="@dimen/paddingHorizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tTitreInventaire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inventaire"
+            android:textSize="25sp"
+            android:textColor="@color/grey"
+            android:gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textSize="25sp"
+            android:textColor="@color/grey"
+            android:gravity="center"
+            android:layout_marginStart="5dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/inventory_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:background="@drawable/add_button"
+
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="25dp"/>
+
+
 </LinearLayout>

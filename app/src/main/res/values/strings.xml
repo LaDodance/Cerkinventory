@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CerkInventory</string>
+    <string name="date">JJ/MM/YY</string>
+    <string name="inventaire">Inventaire du</string>
 </resources>
