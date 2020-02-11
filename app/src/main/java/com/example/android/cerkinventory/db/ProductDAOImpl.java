@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+import android.util.Log;
 
 import com.example.android.cerkinventory.Application;
 import com.example.android.cerkinventory.entity.Product;
@@ -24,8 +25,10 @@ public class ProductDAOImpl {
         db.beginTransaction();
         for (ContentValues values : contentValuesList) {
             if (values.getAsInteger(Columns.COLUMN_ID) != null && values.getAsInteger(Columns.COLUMN_ID) != 0) {
+                Log.e("TAG", "update");
                 db.update(Columns.TABLE_NAME, values, Columns.COLUMN_ID + "=?", new String[]{String.valueOf(values.getAsInteger(Columns.COLUMN_ID))});
             } else {
+                Log.e("TAG", "INSERT");
                 db.insert(Columns.TABLE_NAME, null, values);
             }
         }
@@ -97,7 +100,7 @@ public class ProductDAOImpl {
         }
 
         contentValues.put(Columns.COLUMN_NAME, entity.getNameProduct());
-        contentValues.put(Columns.COLUMN_PRICE, entity.getPriceProduct());
+        contentValues.put(Columns.COLUMN_PRICE, entity.getPrice());
         contentValues.put(Columns.COLUMN_QUANTITY, entity.getQuantity());
 
         return contentValues;
@@ -107,7 +110,7 @@ public class ProductDAOImpl {
         Product entity = new Product();
         entity.setId(cursor.getInt(cursor.getColumnIndex(Columns.COLUMN_ID)));
         entity.setNameProduct(cursor.getString(cursor.getColumnIndex(Columns.COLUMN_NAME)));
-        entity.setPriceProduct(cursor.getFloat(cursor.getColumnIndex(Columns.COLUMN_PRICE)));
+        entity.setPrice(cursor.getFloat(cursor.getColumnIndex(Columns.COLUMN_PRICE)));
         entity.setQuantity(cursor.getInt(cursor.getColumnIndex(Columns.COLUMN_QUANTITY)));
 
         return entity;

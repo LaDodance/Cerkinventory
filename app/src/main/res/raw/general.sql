@@ -8,6 +8,4 @@ CREATE TABLE IF NOT EXISTS product (
 CREATE TABLE IF NOT EXISTS inventory (
   id integer primary key autoincrement,
   dateInventory long,
-
-
 );

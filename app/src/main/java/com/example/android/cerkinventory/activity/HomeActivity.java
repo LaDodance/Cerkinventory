@@ -12,6 +12,7 @@ import com.example.android.cerkinventory.R;
 import com.example.android.cerkinventory.fragment.HistoryFragment;
 
 import com.example.android.cerkinventory.fragment.InventorFragment;
+import com.example.android.cerkinventory.utils.utils;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.home_activity);
 
         handleBottomNavigation();
+        utils.loadProductIfNeeded(HomeActivity.this);
 
     }
 
@@ -74,17 +76,17 @@ public class HomeActivity extends AppCompatActivity {
         ft.commitAllowingStateLoss();
     }
 
-    /* Pas nécéssaire à priori
+
 
     // ici on va regarder quel fragment est actif et on va alors faire un refresh du UI
     private void refreshUiAfterCloseMap() {
         if (activeFragment instanceof InventorFragment) {
             ((InventorFragment) activeFragment).refreshUI();
         } else if (activeFragment instanceof HistoryFragment) {
-            ((HistoryFragment) activeFragment).refreshUI();
+            //((HistoryFragment) activeFragment).refreshUI();
         }
 
 
 
-    }*/
+    }
 }

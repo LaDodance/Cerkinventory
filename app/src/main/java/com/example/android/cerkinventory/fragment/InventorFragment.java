@@ -1,5 +1,6 @@
 package com.example.android.cerkinventory.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,12 +16,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.cerkinventory.R;
+import com.example.android.cerkinventory.adapter.ProductAdapter;
+import com.example.android.cerkinventory.db.ProductDAOImpl;
 
 public class InventorFragment extends Fragment implements View.OnClickListener {
 
 
     private View rootView;
     private RecyclerView recyclerView;
+    private ProductAdapter adapter;
 
     public InventorFragment() {
         //required empty constructor
@@ -45,13 +49,28 @@ public class InventorFragment extends Fragment implements View.OnClickListener {
         recyclerView = rootView.findViewById(R.id.inventory_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        /*
-        adapter = new HistoryAdapter(HistoryFragment.this, HistoryDAOImpl.getAllHistorys());
-        recyclerView.setAdapter(adapter); */
+
+        adapter = new ProductAdapter(InventorFragment.this, ProductDAOImpl.getAllProduct());
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
     public void onClick(View view) {
 
+    }
+    // ici tu refresh les parties de la vue que tu veux
+    public void refreshUI() {
+        adapter.resetValues();
+    }
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 }

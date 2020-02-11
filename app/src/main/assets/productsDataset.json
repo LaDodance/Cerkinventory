@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "nameProduct": "Orval 33cl",
+      "price": 1.6,
+      "quantity": 18
+    },
+    {
+      "nameProduct": "TK 33cl",
+      "price": 1.4,
+      "quantity": 20
+    }
+  ]
+}

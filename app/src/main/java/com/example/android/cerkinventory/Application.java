@@ -1,9 +1,7 @@
 package com.example.android.cerkinventory;
 
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
-import androidx.lifecycle.MutableLiveData;
 
 import com.example.android.cerkinventory.db.DBHelper;
 
@@ -24,7 +22,6 @@ public class Application extends android.app.Application{
     public void onCreate() {
         super.onCreate();
         instance = this;
-
         getGeneralDbHelper().getReadableDatabase();
     }
 
@@ -39,9 +36,5 @@ public class Application extends android.app.Application{
         }
         return generalDbHelper;
     }
-
-
-
-
 
 }

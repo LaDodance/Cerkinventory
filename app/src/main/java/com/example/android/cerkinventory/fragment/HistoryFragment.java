@@ -1,5 +1,6 @@
 package com.example.android.cerkinventory.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,4 +37,20 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
 
     }
+
+   /* // ici tu refresh les parties de la vue que tu veux
+    public void refreshUI() {
+        adapter.resetValues();
+    }
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }*/
 }
